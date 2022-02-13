@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상요소 라바</title>
+  <style>
+    body {
+      font-family:Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      background: red;
+    }
+
+    nav a {
+      position: relative;
+      display: inline-block;
+      margin: 15px 10px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 400;
+      color: #fff;
+      outline: none;
+    }
+
+    .effect6 {
+      position: relative;
+    }
+
+    .effect6 a {
+      overflow: hidden;
+    }
+
+    .effect6 a span {
+      display: block;
+      padding: 10px 20px;
+      background: yellow;
+      color: black;
+      transition: 0.3s;
+    }
+
+    .effect6 a:before {
+      content: attr(data-hover);
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      padding: 10px 20px;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      color: black;
+      transition: 0.3s;
+    }
+
+    .effect6 a:hover span {
+      transform: translateX(100%);
+    }
+
+    .effect6 a:hover:before {
+      transform: translateX(0%);
+    }
+  </style>
+</head>
+<body>
+  <nav class="effect6">
+    <a href="#" data-hover="HTML"><span>HTML</span></a>
+    <a href="#" data-hover="CSS"><span>CSS</span></a>
+    <a href="#" data-hover="JavaScript"><span>JavaScript</span></a>
+    <a href="#" data-hover="jQuery"><span>jQuery</span></a>
+    <a href="#" data-hover="References"><span>References</span></a>
+  </nav>
+</body>
+</html>

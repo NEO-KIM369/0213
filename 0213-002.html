@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상요소 라바</title>
+  <style>
+    body {
+      font-family:Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      background: red;
+    }
+
+    nav a {
+      position: relative;
+      display: inline-block;
+      margin: 15px 10px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 400;
+      color: #fff;
+      outline: none;
+    }
+
+    .effect8 a {
+      margin: 30px;
+    }
+
+    .effect8 a:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      border: 2px solid rgba(0,0,0,0.1);
+      opacity: 0;
+      border-radius: 50%;
+      transition: 0.3s;
+      transform: translateX(-50%) translateY(-50%) scale(0.2);
+    }
+
+    .effect8 a:after {
+      content:"";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 90px;
+      height: 90px;
+      border: 6px solid rgba(0,0,0,0.1);
+      opacity: 0;
+      border-radius: 50%;
+      transition: 0.3s;
+      transform: translateX(-50%) translateY(-50%) scale(0.8);
+    }
+
+    .effect8 a:hover:after, .effect8 a:hover:before {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-50%) scale(1);
+    }
+
+    
+  </style>
+</head>
+<body>
+  <nav class="effect8">
+    <a href="#">HTML</a>
+    <a href="#">CSS</a>
+    <a href="#">JavaScript</a>
+    <a href="#">jQuery</a>
+    <a href="#">References</a>
+  </nav>
+</body>
+</html>
